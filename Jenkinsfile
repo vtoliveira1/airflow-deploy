@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'ls .'
-                sh 'pwd'
+                sh 'echo "AIRFLOW_UID=5000" > .env'
                 sh 'docker-compose up --build'
             }
         }
