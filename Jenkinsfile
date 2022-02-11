@@ -1,10 +1,9 @@
 pipeline {
-    agent { docker { image 'python:3.10.1-alpine' } }
+    agent any
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
-                sh 'echo "Here"'
+                sh 'docker-compose up --build'
             }
         }
     }
